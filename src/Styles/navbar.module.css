@@ -37,6 +37,12 @@
     background-color: blue;
 }
 
+
+.None{
+    font-size: 1.5rem;
+    color: #bfc5bb;
+    margin: 1rem;
+}
 .main{
     display: flex;
     flex-direction: column;

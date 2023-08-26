@@ -22,9 +22,8 @@ const CreateHabit = (props) => {
       id: props.data.length + 1,
       title: newHabit,
       weeklog: getWeeklog(),
-      daysCompleted: getCompleted(newHabitData.weeklog),
+      daysCompleted: 0,
     };
-    newHabitData.daysCompleted = getCompleted(newHabitData.weeklog);
     const newHabits = [newHabitData, ...props.data];
     props.dispatch(addHabit(newHabits));
     document.getElementById("main").style.filter = "";
