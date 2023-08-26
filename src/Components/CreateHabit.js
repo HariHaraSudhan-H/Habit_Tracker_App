@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+
 import styles from "../Styles/CreateHabit.module.css";
 import nameStyles from "../Styles/Habit.module.css";
 import navStyles from "../Styles/navbar.module.css";
-import { connect } from "react-redux";
 import { addHabit, createHabit } from "../Redux/Actions";
-import { getCompleted, getWeeklog, weeklog } from "..";
+import { getCompleted, getWeeklog } from "..";
 
 const CreateHabit = (props) => {
   const [newHabit, setNewHabit] = useState("");
+
+  // Handles submission of create form
   const handleSubmit = (e) => {
     e.preventDefault();
     if (newHabit.length == 0) {
@@ -19,19 +22,22 @@ const CreateHabit = (props) => {
       id: props.data.length + 1,
       title: newHabit,
       weeklog: getWeeklog(),
-      daysCompleted: getCompleted(weeklog),
+      daysCompleted: getCompleted(newHabitData.weeklog),
     };
+    newHabitData.daysCompleted = getCompleted(newHabitData.weeklog);
     const newHabits = [newHabitData, ...props.data];
     props.dispatch(addHabit(newHabits));
     document.getElementById("main").style.filter = "";
   };
 
+  // Handle closing of form
   const handleFormClose = (e) => {
     e.preventDefault();
     console.log("close");
     props.dispatch(createHabit(false));
     document.getElementById("main").style.filter = "";
   };
+
   return (
     <form onSubmit={handleSubmit} className={styles.formContainer}>
       

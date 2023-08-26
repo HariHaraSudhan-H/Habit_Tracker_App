@@ -42,16 +42,6 @@ export function habits(state = InitialState, action) {
         ...state,
         detailView: !state.detailView,
       };
-    // case HABIT_ACTION:
-    //   return {
-    //     ...state,
-    //     detailView: !state.detailView,
-    //   };
-    // case ADD_TO_HABITS:
-    //   return {
-    //     ...state,
-    //     data:[]
-    //   };
     default:
       break;
   }

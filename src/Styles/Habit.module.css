@@ -1,3 +1,4 @@
+/* Habit list styles */
 .habitContainer {
   display: flex;
   flex-direction: row;
@@ -48,8 +49,6 @@
 .delete {
   background-color: transparent;
   border: 0;
-  /* width: 1.5rem;
-  height: 1.5rem; */
 }
 .delete img {
   width: 1.25rem;
@@ -85,7 +84,7 @@
   padding: 0.5rem;
 }
 
-.dayContainer:hover{
+.dayContainer:hover {
   cursor: pointer;
 }
 
@@ -107,6 +106,7 @@
   font-size: 0.8rem;
 }
 
+/* action styles */
 .actionContainer {
   background-color: grey;
   width: 60%;
@@ -144,54 +144,33 @@
 }
 
 @media screen and (max-width: 450px) {
-  /* .dayContainer {
-    width: 60%;
-    height: 80px;
-  } */
   .habitWeekContainer {
     width: 90%;
     padding: 0.75rem;
   }
 
-  .actionContainer{
-    /* bottom: 0px; */
+  .actionContainer {
     font-size: 0.8rem;
-    /* top: 210px; */
     left: 25%;
   }
 }
 
 @media screen and (max-width: 565px) {
   .dayContainer {
-    /* width: 60%; */
-    /* height: 110px; */
     padding: 0.35rem;
   }
-  .date{
+  .date {
     font-size: 0.7rem;
   }
-  .day{
+  .day {
     font-size: 0.8rem;
   }
-  .actionIcon img{
+  .actionIcon img {
     width: 1rem;
     height: 1rem;
   }
 
-  .actionContainer{
+  .actionContainer {
     font-size: 0.7rem;
   }
-  /* .habitWeekContainer {
-    width: 92.5%;
-    padding: 1rem 0.25rem;
-  }
-  .btngrp {
-    justify-content: space-around;
-    width: 90%;
-    flex-direction: column;
-  }
-  .actionIcon {
-    padding: 0;
-    margin-bottom: 0.25rem;
-  } */
 }

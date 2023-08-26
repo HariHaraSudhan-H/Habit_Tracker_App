@@ -3,7 +3,6 @@ export const DELETE_HABIT = "DELETE_HABIT";
 export const CREATE_HABIT = "CREATE_HABIT";
 export const UPDATE_HABITS = "ADD_TO_HABITS";
 export const TOGGLE_VIEW = "TOGGLE_VIEW";
-// export const HABIT_ACTION = 'HABIT_ACTION';
 
 export const addHabit = (habit) => {
   return {
@@ -37,10 +36,3 @@ export const toggleView = () => {
     type: TOGGLE_VIEW,
   };
 };
-
-// export const habitAction = (new) => {
-//   return {
-//     type: HABIT_ACTION,
-//     action
-//   };
-// };

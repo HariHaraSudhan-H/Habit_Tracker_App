@@ -1,5 +1,4 @@
 import React from "react";
-import windowStyles from "../Styles/CreateHabit.module.css";
 import styles from "../Styles/Habit.module.css";
 const Day = (props) => {
   const { day, index,habit, handleHabitAction } = props;
@@ -25,7 +24,6 @@ const Day = (props) => {
           <img
             src="https://img.icons8.com/?size=512&id=21741&format=png"
             className={styles.icon}
-            // style={{ margin: "0.25rem" }}
             alt="done"
           />
         </button>
@@ -45,7 +43,6 @@ const Day = (props) => {
           <img
             src="https://img.icons8.com/?size=512&id=OZuepOQd0omj&format=png"
             className={styles.icon}
-            // style={{ margin: "0.25rem" }}
             alt="Not done"
           />
         </button>
@@ -65,7 +62,6 @@ const Day = (props) => {
           <img
             src="https://img.icons8.com/?size=512&id=LHmuCWgibLck&format=png"
             className={styles.icon}
-            // style={{ margin: "0.25rem" }}
             alt="No action"
           />
         </button>

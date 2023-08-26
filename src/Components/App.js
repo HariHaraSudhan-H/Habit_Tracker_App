@@ -5,7 +5,7 @@ import CreateHabit from "./CreateHabit";
 import { connect } from "react-redux";
 import { addHabit } from "../Redux/Actions";
 import HabitWeek from "./HabitWeek";
-import { getCompleted, getWeeklog, weeklog } from "..";
+import { getCompleted, getWeeklog } from "..";
 import styles from "../Styles/navbar.module.css";
 
 class App extends React.Component {
@@ -15,25 +15,14 @@ class App extends React.Component {
         {
           id: 1,
           title: "Running",
-          // weeklog: [{ id:0,day: "Sun", date: firstDate+month[date.getMonth()], completed: "No action",style:{backgroundColor : 'rgb(17, 129, 204)'} },
-          // { id:1,day: "Mon", date: firstDate+month[date.getMonth()], completed: "No action",style:{backgroundColor : 'rgb(17, 129, 204)'} },
-          // { id:2,day: "Tues", date: firstDate+month[date.getMonth()], completed: "No action",style:{backgroundColor : 'rgb(17, 129, 204)'} },
-          // { id:3,day: "Wed", date: firstDate+month[date.getMonth()], completed: "No action",style:{backgroundColor : 'rgb(17, 129, 204)'} },
-          // { id:4,day: "Thur", date: firstDate+month[date.getMonth()], completed: "No action",style:{backgroundColor : 'rgb(17, 129, 204)'} },
-          // { id:5,day: "Fri", date: firstDate+month[date.getMonth()], completed: "No action",style:{backgroundColor : 'rgb(17, 129, 204)'} },
-          // { id:6,day: "Sat", date: firstDate+month[date.getMonth()], completed: "No action",style:{backgroundColor : 'rgb(17, 129, 204)'} },],
-          // completed: "No action",
           weeklog: getWeeklog(),
-          daysCompleted: getCompleted(weeklog),
+          daysCompleted: 0,
         },
       ])
     );
   }
   handleDelete = () => {};
   render() {
-    // const style = {
-    //   // filter: blur('4px')
-    // }
     const { data, createMode } = this.props;
     console.log("Updated State", data);
     return (

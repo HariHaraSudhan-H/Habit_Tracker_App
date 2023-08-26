@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./Components/App";
 import { createStore } from "redux";
-import { habits } from "./Redux/Reducers";
 import { Provider } from "react-redux";
 
+import "./index.css";
+import App from "./Components/App";
+import { habits } from "./Redux/Reducers";
+
 const store = createStore(habits);
-console.log(store);
 
 export const getWeeklog= ()=>{
   const month = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
@@ -43,15 +43,7 @@ export const getCompleted = (weeklog)=>{
   })
   return count;
 }
-export const weeklog = [
-  { id:0,day: "Sunday", date: "20/08/2023" },
-  { id:1,day: "Sunday", date: "20/08/2023" },
-  { id:2,day: "Sunday", date: "20/08/2023" },
-  { id:3,day: "Sunday", date: "20/08/2023" },
-  { id:4,day: "Sunday", date: "20/08/2023" },
-  { id:5,day: "Sunday", date: "20/08/2023" },
-  { id:6,day: "Sunday", date: "20/08/2023" },
-];
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

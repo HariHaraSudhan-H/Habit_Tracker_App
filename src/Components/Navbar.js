@@ -4,13 +4,18 @@ import { connect } from "react-redux";
 import { createHabit, toggleView } from "../Redux/Actions";
 
 const Navbar = (props) => {
+
+  // Handle toggling view from detail to Week
   const handleToggleView = ()=>{
     props.dispatch(toggleView())
   }
+
+  // Handle adding habits
   const handleAddHabit = () => {
     document.getElementById('main').style.filter = 'blur(4px)';
     props.dispatch(createHabit(true));
   };
+  
   return (
     <div className={styles.nav}>
       <h1 className={styles.logo}>Habits</h1>

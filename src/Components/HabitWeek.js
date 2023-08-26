@@ -14,18 +14,18 @@ const HabitWeek = (props) => {
     { backgroundColor: "rgb(243, 114, 82)" },
     {backgroundColor: "purple"}
   ];
-  const [newStyle, setNewStyle] = useState({
-    backgroundColor: "rgb(17, 129, 204)",
-  });
   const handleHabitAction = (e, action, dayId, dayDate, dayMonth) => {
     e.preventDefault();
     const today = new Date();
     const todayDate = today.getDate();
     const todayMonth = today.getMonth();
+
+    // checks for date after today if it appears
     if (dayDate > todayDate || todayMonth !== dayMonth) {
       alert("Cannot update for after today");
       return;
     }
+    // Chooses style as per action
     let style = {};
     if (action === "No action") {
       style = daystyles[0];
@@ -34,7 +34,7 @@ const HabitWeek = (props) => {
     } else {
       style = daystyles[2];
     }
-    // setNewStyle(style);
+
     const newHabits = props.data;
     newHabits.map((newhabit) => {
       if (newhabit.id === habit.id) {
@@ -50,6 +50,7 @@ const HabitWeek = (props) => {
     e.stopPropagation();
   };
 
+  // Handle click of Day container click
   const handleDayClick = (habit, index) => {
     console.log("Clicked");
     setAction(true);
@@ -62,6 +63,7 @@ const HabitWeek = (props) => {
     });
     props.dispatch(updateHabits(newHabits));
   };
+  
   return (
     <div className={`${styles.habitContainer} ${styles.habitWeekContainer}`}>
       <h3 className={styles.name}>{habit.title}</h3>
