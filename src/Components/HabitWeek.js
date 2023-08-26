@@ -14,6 +14,10 @@ const HabitWeek = (props) => {
     { backgroundColor: "rgb(243, 114, 82)" },
     {backgroundColor: "purple"}
   ];
+
+  const todayStyles = {
+    border: '2px solid white'
+  }
   const handleHabitAction = (e, action, dayId, dayDate, dayMonth) => {
     e.preventDefault();
     const today = new Date();
@@ -77,7 +81,7 @@ const HabitWeek = (props) => {
               <div className={styles.day}>{day.day}</div>
               <div
                 className={styles.dayContainer}
-                style={day.style}
+                style={index===6?{...todayStyles,...day.style}:{...day.style}}
                 onClick={() => {
                   handleDayClick(habit, index);
                 }}
