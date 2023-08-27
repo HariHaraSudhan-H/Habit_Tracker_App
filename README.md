@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# Habit Tracker App using React JS - Redux
+
+Open https://hariharasudhan-h.github.io/Habit_Tracker_App/ to view it in your browser.
+
+We can add/delete/track our regular habits on weekly basis
+
+## Detail View
+![image](https://github.com/HariHaraSudhan-H/Habit_Tracker_App/assets/115916940/811c56d4-434e-4178-b1e6-8395d0440523)
+
+## Week View
+![image](https://github.com/HariHaraSudhan-H/Habit_Tracker_App/assets/115916940/e3ecc7e1-9d57-4edf-8944-489958a3975e)
+
+We can mark Done/Not Done/No action for each day and track for 6 days before today
+
+![image](https://github.com/HariHaraSudhan-H/Habit_Tracker_App/assets/115916940/1bbdaaae-ec92-4f22-900a-a8cd182d8ef8)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
