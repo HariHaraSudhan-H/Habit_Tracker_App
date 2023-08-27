@@ -9,6 +9,18 @@ import { getCompleted, getWeeklog } from "..";
 import styles from "../Styles/navbar.module.css";
 
 class App extends React.Component {
+  componentDidMount() {
+    // this.props.dispatch(
+    //   addHabit([
+    //     {
+    //       id: 1,
+    //       title: "Running",
+    //       weeklog: getWeeklog(),
+    //       daysCompleted: 0,
+    //     },
+    //   ])
+    // );
+  }
 
   render() {
     const { data, createMode } = this.props;
@@ -17,7 +29,7 @@ class App extends React.Component {
       <div className="App" style={{display:"flex",flexDirection:"column",justifyContent:"center"}}>
         <Navbar />
         <div className={styles.main} id="main">
-          {data.length>0 ?
+          {data&&data.length>0 ?
             data.map((habit, index) => {
               return this.props.detailView ? (
                 <Habit habit={habit} key={index} />
