@@ -45,7 +45,6 @@ const HabitWeek = (props) => {
         newhabit.weeklog[dayId].completed = action;
         newhabit.weeklog[dayId].style = style;
         newhabit.weeklog[dayId].actionMode = false;
-        console.log(newhabit.weeklog[dayId].actionMode === false);
         newhabit.daysCompleted = getCompleted(newhabit.weeklog);
       }
     });
@@ -56,7 +55,11 @@ const HabitWeek = (props) => {
 
   // Handle click of Day container click
   const handleDayClick = (habit, index) => {
-    console.log("Clicked");
+    // console.log("Clicked");
+    if(action){
+      alert('Complete Previous Action...');
+      return
+    }
     setAction(true);
     const newHabits = props.data;
     newHabits.map((newhabit) => {

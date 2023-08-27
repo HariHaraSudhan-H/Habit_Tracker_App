@@ -54,7 +54,6 @@ const CreateHabit = (props) => {
       <div className={navStyles.btngrp}>
         <button
           type="submit"
-          formAction={handleSubmit}
           className={navStyles.addButton}
           style={{ position: "absolute", left: "80%" }}
         >
