@@ -32,7 +32,6 @@ const CreateHabit = (props) => {
   // Handle closing of form
   const handleFormClose = (e) => {
     e.preventDefault();
-    console.log("close");
     props.dispatch(createHabit(false));
     document.getElementById("main").style.filter = "";
   };

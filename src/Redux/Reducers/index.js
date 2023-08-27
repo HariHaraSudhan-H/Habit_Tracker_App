@@ -43,6 +43,11 @@ export function habits(state = InitialState, action) {
         ...state,
         detailView: !state.detailView,
       };
+      case ACTION_TOGGLE:
+        return {
+          ...state,
+          actionMode:action.mode
+        };
     default:
       break;
   }

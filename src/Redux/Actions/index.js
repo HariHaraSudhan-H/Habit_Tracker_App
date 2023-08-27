@@ -37,3 +37,10 @@ export const toggleView = () => {
     type: TOGGLE_VIEW,
   };
 };
+
+export const toggleActionMode = (mode) => {
+  return {
+    type: ACTION_TOGGLE,
+    mode
+  };
+};

@@ -20,8 +20,8 @@ const Navbar = (props) => {
     <div className={styles.nav}>
       <h1 className={styles.logo}>Habits</h1>
       <div className={styles.btngrp}>
-        <button className={styles.toggleButton} onClick={handleToggleView} disabled={props.createMode}>{props.detailView?'Week View':'Detail View'}</button>
-        <button className={styles.addButton} onClick={handleAddHabit} disabled={props.createMode}>
+        <button className={styles.toggleButton} onClick={handleToggleView} disabled={props.createMode||props.actionMode}>{props.detailView?'Week View':'Detail View'}</button>
+        <button className={styles.addButton} onClick={handleAddHabit} disabled={props.createMode||props.actionMode}>
           + Add Habit
         </button>
       </div>

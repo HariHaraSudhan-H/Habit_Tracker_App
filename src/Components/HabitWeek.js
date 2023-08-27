@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../Styles/Habit.module.css";
 import { connect } from "react-redux";
-import { updateHabits } from "../Redux/Actions";
+import { toggleActionMode, updateHabits } from "../Redux/Actions";
 import { getCompleted } from "..";
 import Day from "./Day";
 
@@ -49,6 +49,7 @@ const HabitWeek = (props) => {
       }
     });
     setAction(false);
+    props.dispatch(toggleActionMode(false));
     props.dispatch(updateHabits(newHabits));
     e.stopPropagation();
   };
@@ -56,11 +57,13 @@ const HabitWeek = (props) => {
   // Handle click of Day container click
   const handleDayClick = (habit, index) => {
     // console.log("Clicked");
-    if(action){
+    console.log(props.actionMode);
+    if(props.actionMode){
       alert('Complete Previous Action...');
       return
     }
     setAction(true);
+    props.dispatch(toggleActionMode(true));
     const newHabits = props.data;
     newHabits.map((newhabit) => {
       if (newhabit.id === habit.id) {
