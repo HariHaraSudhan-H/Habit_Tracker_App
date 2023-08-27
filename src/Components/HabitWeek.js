@@ -48,7 +48,7 @@ const HabitWeek = (props) => {
         newhabit.daysCompleted = getCompleted(newhabit.weeklog);
       }
     });
-    setAction(false);
+    // setAction(false);
     props.dispatch(toggleActionMode(false));
     props.dispatch(updateHabits(newHabits));
     e.stopPropagation();
@@ -62,7 +62,7 @@ const HabitWeek = (props) => {
       alert('Complete Previous Action...');
       return
     }
-    setAction(true);
+    // setAction(true);
     props.dispatch(toggleActionMode(true));
     const newHabits = props.data;
     newHabits.map((newhabit) => {
