@@ -25,10 +25,10 @@ const HabitWeek = (props) => {
     const todayMonth = today.getMonth();
 
     // checks for date after today if it appears
-    if (dayDate > todayDate || todayMonth !== dayMonth) {
-      alert("Cannot update for after today");
-      return;
-    }
+    // if (dayDate > todayDate || todayMonth !== dayMonth) {
+    //   alert("Cannot update for after today");
+    //   return;
+    // }
     // Chooses style as per action
     let style = {};
     if (action === "No action") {
