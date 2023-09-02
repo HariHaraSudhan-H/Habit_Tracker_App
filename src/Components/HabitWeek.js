@@ -23,7 +23,7 @@ const HabitWeek = (props) => {
     const today = new Date();
     const todayDate = today.getDate();
     const todayMonth = today.getMonth();
-
+    console.log(todayDate);
     // checks for date after today if it appears
     // if (dayDate > todayDate || todayMonth !== dayMonth) {
     //   alert("Cannot update for after today");
