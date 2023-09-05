@@ -18,8 +18,9 @@ const CreateHabit = (props) => {
       return;
     }
     props.dispatch(createHabit(false));
+    const id = props.data ? 0 : props.data.length;
     const newHabitData = {
-      id: props.data ? 0: props.data.length + 1,
+      id: id,
       title: newHabit,
       weeklog: getWeeklog(),
       daysCompleted: 0,
