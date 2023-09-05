@@ -17,7 +17,7 @@ const CreateHabit = (props) => {
       return;
     }
     props.dispatch(createHabit(false));
-    const id = props.data ? 0 : props.data.length;
+    const id = props.data.length;
     const newHabitData = {
       id: id,
       title: newHabit,
