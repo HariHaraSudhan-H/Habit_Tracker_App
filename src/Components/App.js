@@ -9,21 +9,15 @@ import { getCompleted, getWeeklog } from "..";
 import styles from "../Styles/navbar.module.css";
 
 class App extends React.Component {
-  // componentDidMount() {
-  //   this.props.dispatch(
-  //     addHabit([
-  //       {
-  //         id: 1,
-  //         title: "Running",
-  //         weeklog: getWeeklog(),
-  //         daysCompleted: 0,
-  //       },
-  //     ])
-  //   );
-  // }
+  componentDidMount() {
+    this.props.dispatch(
+      addHabit(JSON.parse(localStorage.getItem('habits')))
+    );
+  }
 
   render() {
-    const { data, createMode } = this.props;
+    const { createMode } = this.props;
+    const data = JSON.parse(localStorage.getItem('habits'))
     return (
       <div className="App" style={{display:"flex",flexDirection:"column",justifyContent:"center"}}>
         <Navbar />

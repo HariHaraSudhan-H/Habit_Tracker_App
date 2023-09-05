@@ -6,6 +6,7 @@ export const TOGGLE_VIEW = "TOGGLE_VIEW";
 export const ACTION_TOGGLE = 'ACTION_TOGGLE';
 
 export const addHabit = (habit) => {
+  localStorage.setItem('habits',JSON.stringify(habit));
   return {
     type: ADD_HABITS,
     habit,
@@ -13,6 +14,7 @@ export const addHabit = (habit) => {
 };
 
 export const deleteHabit = (habit) => {
+  localStorage.setItem('habits',JSON.stringify(habit));
   return {
     type: DELETE_HABIT,
     habit,
@@ -27,6 +29,7 @@ export const createHabit = (createMode) => {
 };
 
 export const updateHabits = (newHabits) => {
+  localStorage.setItem('habits',JSON.stringify(newHabits));
   return {
     type: UPDATE_HABITS,
     newHabits,

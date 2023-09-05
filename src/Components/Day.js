@@ -16,7 +16,7 @@ const Day = (props) => {
               "Completed",
               index,
               day.date,
-              day.timestamp.getMonth()
+              // day.timestamp.getMonth()
             );
           }}
           title="Mark Done"
@@ -35,7 +35,7 @@ const Day = (props) => {
               "Not done",
               index,
               day.date,
-              day.timestamp.getMonth()
+              // day.timestamp.getMonth()
             );
           }}
           title="Mark not done"
@@ -54,7 +54,7 @@ const Day = (props) => {
               "No action",
               index,
               day.date,
-              day.timestamp.getMonth()
+              // day.timestamp.getMonth()
             );
           }}
           title="No action"
