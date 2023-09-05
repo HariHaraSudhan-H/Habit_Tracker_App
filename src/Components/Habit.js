@@ -8,6 +8,7 @@ const Habit = (props) => {
   const handleDelete = () => {
     const newHabits = props.data.filter((oldhabit)=>oldhabit.id!==habit.id);
     props.dispatch(updateHabits(newHabits))
+    localStorage.setItem('habits',JSON.stringify(newHabits));
   };
   return (
     <div className={styles.habitContainer}>

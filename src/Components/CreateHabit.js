@@ -9,7 +9,6 @@ import { getCompleted, getWeeklog } from "..";
 
 const CreateHabit = (props) => {
   const [newHabit, setNewHabit] = useState("");
-  console.log(props);
   // Handles submission of create form
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,9 +17,9 @@ const CreateHabit = (props) => {
       return;
     }
     props.dispatch(createHabit(false));
-    // const id = props.data ? 0 : props.data.length;
+    const id = props.data ? 0 : props.data.length;
     const newHabitData = {
-      // id: id,
+      id: id,
       title: newHabit,
       weeklog: getWeeklog(),
       daysCompleted: 0,
@@ -28,6 +27,7 @@ const CreateHabit = (props) => {
     const newHabits = [newHabitData, ...props.data];
     props.dispatch(addHabit(newHabits));
     document.getElementById("main").style.filter = "";
+    localStorage.setItem('habits',JSON.stringify(newHabits));
   };
 
   // Handle closing of form

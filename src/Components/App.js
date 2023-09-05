@@ -10,6 +10,7 @@ import styles from "../Styles/navbar.module.css";
 
 class App extends React.Component {
   componentDidMount() {
+    localStorage.setItem('habits',JSON.stringify([]))
     this.props.dispatch(
       addHabit(JSON.parse(localStorage.getItem('habits')))
     );
