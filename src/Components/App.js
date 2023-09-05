@@ -10,27 +10,37 @@ import styles from "../Styles/navbar.module.css";
 
 class App extends React.Component {
   componentDidMount() {
-    localStorage.setItem('habits',JSON.stringify([]))
-    this.props.dispatch(
-      addHabit(JSON.parse(localStorage.getItem('habits')))
-    );
+    if (JSON.parse(localStorage.getItem("habits"))) {
+      localStorage.setItem("habits", JSON.stringify([]));
+    }
+    this.props.dispatch(addHabit(JSON.parse(localStorage.getItem("habits"))));
   }
 
   render() {
     const { createMode } = this.props;
-    const data = JSON.parse(localStorage.getItem('habits'))
+    const data = JSON.parse(localStorage.getItem("habits"));
     return (
-      <div className="App" style={{display:"flex",flexDirection:"column",justifyContent:"center"}}>
+      <div
+        className="App"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
         <Navbar />
         <div className={styles.main} id="main">
-          {data&&data.length>0 ?
+          {data && data.length > 0 ? (
             data.map((habit, index) => {
               return this.props.detailView ? (
                 <Habit habit={habit} key={index} />
               ) : (
                 <HabitWeek habit={habit} key={index} />
               );
-            }):<div className={styles.None}>Add Habits to Track</div>}
+            })
+          ) : (
+            <div className={styles.None}>Add Habits to Track</div>
+          )}
         </div>
         {createMode && <CreateHabit />}
       </div>
