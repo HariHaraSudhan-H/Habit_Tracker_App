@@ -9,7 +9,7 @@ import { getCompleted, getWeeklog } from "..";
 
 const CreateHabit = (props) => {
   const [newHabit, setNewHabit] = useState("");
-
+  console.log(props);
   // Handles submission of create form
   const handleSubmit = (e) => {
     e.preventDefault();
